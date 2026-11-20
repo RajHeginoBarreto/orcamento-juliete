@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orçamento | Juliete Acabamentos</title>
+    <meta name="description" content="Peça seu orçamento de revestimento em pedras naturais ou cimentícias. Preencha em 1 minuto e envie direto pelo WhatsApp." />
+    <meta name="theme-color" content="#5E1714" />
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="apple-touch-icon" href="img/favicon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="Orçamento — Juliete Acabamentos" />
+    <meta property="og:description" content="Preencha os dados da sua parede e receba seu orçamento pelo WhatsApp." />
+    <meta property="og:image" content="https://rajheginobarreto.github.io/orcamento-juliete/img/og-image.jpg" />
+    <meta property="og:url" content="https://rajheginobarreto.github.io/orcamento-juliete/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Quicksand:wght@400..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="wrap top__inner">
+        <img class="top__logo" src="img/logo-gold.webp" alt="Juliete Acabamentos" width="900" height="594" />
+        <p class="eyebrow">Orçamento</p>
+        <h1 class="top__title">Vamos transformar a sua parede</h1>
+        <p class="top__text">Preencha os dados abaixo e envie direto para o WhatsApp da Juliete. Leva menos de 1 minuto.</p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <form class="card" id="form" novalidate>
+        <div id="steps">
+          <!-- 1 -->
+          <section class="block">
+            <h2 class="block__title"><span class="num">1</span> Dados do cliente</h2>
+            <label class="field">
+              <span>Nome completo*</span>
+              <input name="nome" required autocomplete="name" maxlength="120" placeholder="Ex.: Maria da Silva" />
+              <small class="err">Informe o seu nome completo.</small>
+            </label>
+            <label class="field">
+              <span>Cidade*</span>
+              <input name="cidade" required autocomplete="address-level2" maxlength="120" placeholder="Ex.: Tubarão - SC" />
+              <small class="err">Informe a cidade.</small>
+            </label>
+            <label class="field">
+              <span>Endereço da obra*</span>
+              <input name="endereco" required autocomplete="street-address" maxlength="200" placeholder="Rua, número e bairro" />
+              <small class="err">Informe o endereço da obra.</small>
+            </label>
+          </section>
+
+          <!-- 2 -->
+          <section class="block">
+            <h2 class="block__title"><span class="num">2</span> Informações da parede</h2>
+            <fieldset class="field">
+              <legend>Aplicação*</legend>
+              <div class="pills" data-group="aplicacao">
+                <label class="pill"><input type="radio" name="aplicacao" value="Interna" required />Interna</label>
+                <label class="pill"><input type="radio" name="aplicacao" value="Externa" />Externa</label>
+              </div>
+              <small class="err">Escolha se a aplicação é interna ou externa.</small>
+            </fieldset>
+            <div class="row">
+              <label class="field">
+                <span>Altura (m)</span>
+                <input name="altura" inputmode="decimal" placeholder="Ex.: 2,80" maxlength="8" />
+                <small class="err">Use só números, ex.: 2,80</small>
+              </label>
+              <label class="field">
+                <span>Largura (m)</span>
+                <input name="largura" inputmode="decimal" placeholder="Ex.: 4,50" maxlength="8" />
+                <small class="err">Use só números, ex.: 4,50</small>
+              </label>
+            </div>
+            <label class="field">
+              <span>Metragem total (m²)*</span>
+              <input name="metragem" inputmode="decimal" placeholder="Calculada pela altura × largura" maxlength="10" required />
+              <small class="hint" id="metragem-hint">Calculamos sozinho pela altura × largura. Se forem várias paredes, pode digitar o total.</small>
+              <small class="err">Informe a metragem total (ou a altura e a largura).</small>
+            </label>
+          </section>
+
+          <!-- 3 -->
+          <section class="block">
+            <h2 class="block__title"><span class="num">3</span> Tipo de revestimento</h2>
+            <fieldset class="field">
+              <legend class="sr-only">Tipo de revestimento*</legend>
+              <div class="types" data-group="tipo">
+                <label class="type">
+                  <input type="radio" name="tipo" value="Pedras naturais" required />
+                  <img src="img/pedra-natural.webp" alt="" width="600" height="600" loading="lazy" />
+                  <span class="type__name">Pedras naturais</span>
+                  <span class="type__check" aria-hidden="true">✓</span>
+                </label>
+                <label class="type">
+                  <input type="radio" name="tipo" value="Pedras cimentícias" />
+                  <img src="img/pedra-cimenticia.webp" alt="" width="828" height="970" loading="lazy" />
+                  <span class="type__name">Pedras cimentícias</span>
+                  <span class="type__check" aria-hidden="true">✓</span>
+                </label>
+              </div>
+              <small class="err">Escolha o tipo de revestimento.</small>
+            </fieldset>
+          </section>
+
+          <!-- 4 -->
+          <section class="block">
+            <h2 class="block__title"><span class="num">4</span> Como conheceu a empresa?</h2>
+            <fieldset class="field">
+              <legend class="sr-only">Como conheceu a empresa?*</legend>
+              <div class="pills" data-group="origem">
+                <label class="pill"><input type="radio" name="origem" value="Instagram" required />Instagram</label>
+                <label class="pill"><input type="radio" name="origem" value="Indicação" />Indicação</label>
+                <label class="pill"><input type="radio" name="origem" value="WhatsApp" />WhatsApp</label>
+                <label class="pill"><input type="radio" name="origem" value="Google" />Google</label>
+                <label class="pill"><input type="radio" name="origem" value="Outros" />Outros</label>
+              </div>
+              <small class="err">Conte pra gente como nos conheceu.</small>
+            </fieldset>
+            <label class="field" id="outros-field" hidden>
+              <span>Qual?</span>
+              <input name="origem_outros" maxlength="120" placeholder="Ex.: vi uma obra na rua" />
+            </label>
+          </section>
+
+          <!-- 5 -->
+          <section class="block block--last">
+            <h2 class="block__title"><span class="num">5</span> Finalização</h2>
+            <p class="summary" id="summary" hidden></p>
+            <button class="btn" type="submit">
+              <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.43-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>
+              Enviar solicitação pelo WhatsApp
+            </button>
+            <p class="legal">Seus dados são usados só para responder o seu orçamento.</p>
+          </section>
+        </div>
+
+        <div class="done" id="done" hidden>
+          <span class="done__icon" aria-hidden="true">✓</span>
+          <h2>Quase lá!</h2>
+          <p>Abrimos o WhatsApp com os dados do seu orçamento. É só tocar em <strong>enviar</strong> na conversa.</p>
+          <a class="btn" id="done-link" href="#" target="_blank" rel="noopener">Abrir o WhatsApp de novo</a>
+          <button type="button" class="link" id="again">Fazer outro orçamento</button>
+        </div>
+      </form>
+
+      <footer class="foot">
+        <img src="img/logo-white.webp" alt="" width="120" height="79" />
+        <p>Juliete Acabamentos · Tubarão &amp; Região - SC</p>
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
